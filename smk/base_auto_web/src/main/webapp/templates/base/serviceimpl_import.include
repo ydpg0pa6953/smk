@@ -1,0 +1,6 @@
+import ${packageName}.model.${className}Model;
+import ${packageName}.dao.${className}Dao;
+import ${packageName}.service.${className}Service;
+<#if table.keyJavaType="java.util.HashMap">
+import java.util.HashMap;
+</#if>

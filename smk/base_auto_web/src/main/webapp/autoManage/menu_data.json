@@ -1,0 +1,53 @@
+{
+	"menus" : [{
+				"menuid" : "1",
+				"icon" : "icon-sys",
+				"menuname" : "控件使用",
+				"menus" : [{
+							"menuid" : "2",
+							"menuname" : "数据字典",
+							"icon" : "icon-nav",
+							"url" : "autoManage/dictionary/dictionaryList.jsp"
+						}, {
+							"menuid" : "3",
+							"menuname" : "数据库",
+							"icon" : "icon-add",
+							"url" : "autoManage/db/dbList.jsp"
+						}, {
+							"menuid" : "4",
+							"menuname" : "数据库分类",
+							"icon" : "icon-users",
+							"url" : "dbTableList.html"
+						}, {
+							"menuid" : "5",
+							"menuname" : "角色管理",
+							"icon" : "icon-role",
+							"url" : "demo2.html"
+						}, {
+							"menuid" : "6",
+							"menuname" : "权限设置",
+							"icon" : "icon-set",
+							"url" : "demo.html"
+						}, {
+							"menuid" : "7",
+							"menuname" : "系统日志",
+							"icon" : "icon-log",
+							"url" : "demo.html"
+						}]
+			}, {
+				"menuid" : "8",
+				"icon" : "icon-sys",
+				"menuname" : "员工管理",
+				"menus" : [{
+							"menuid" : "9",
+							"menuname" : "员工列表",
+							"icon" : "icon-nav",
+							"url" : "demo.html"
+						}, {
+							"menuid" : "10",
+							"menuname" : "视频监控",
+							"icon" : "icon-nav",
+							"url" : "demo1.html"
+						}]
+			}]
+}

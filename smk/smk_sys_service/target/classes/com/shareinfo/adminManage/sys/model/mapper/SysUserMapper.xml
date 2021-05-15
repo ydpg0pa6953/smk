@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 使用接口地址作为namespace-->
+<mapper namespace="SysUser">
+
+	<resultMap id="RM_SysUser" type="com.shareinfo.adminManage.sys.model.SysUserModel">
+        <result property="id" column="id"/>
+        <result property="companyId" column="company_id"/>
+        <result property="officeId" column="office_id"/>
+        <result property="loginName" column="login_name"/>
+        <result property="password" column="password"/>
+        <result property="no" column="no"/>
+        <result property="name" column="name"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
+        <result property="mobile" column="mobile"/>
+        <result property="userType" column="user_type"/>
+        <result property="loginIp" column="login_ip"/>
+        <result property="loginDate" column="login_date"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createDate" column="create_date"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateDate" column="update_date"/>
+        <result property="remarks" column="remarks"/>
+        <result property="delFlag" column="del_flag"/>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="SysUser_columns">
+	    <![CDATA[
+				id,
+				company_id,
+				office_id,
+				login_name,
+				password,
+				no,
+				name,
+				email,
+				phone,
+				mobile,
+				user_type,
+				login_ip,
+				login_date,
+				create_by,
+				create_date,
+				update_by,
+				update_date,
+				remarks,
+				del_flag
+	    ]]>
+	</sql>
+
+	<insert id="SysUser_insert">
+		<selectKey resultType="java.lang.String" order="BEFORE" keyProperty="id">
+			SELECT uuid() AS ID 
+	    </selectKey>
+	    <![CDATA[
+	        INSERT INTO SYS_USER (
+	        	id ,
+	        	company_id ,
+	        	office_id ,
+	        	login_name ,
+	        	password ,
+	        	no ,
+	        	name ,
+	        	email ,
+	        	phone ,
+	        	mobile ,
+	        	user_type ,
+	        	login_ip ,
+	        	login_date ,
+	        	create_by ,
+	        	create_date ,
+	        	update_by ,
+	        	update_date ,
+	        	remarks ,
+	        	del_flag 
+	        ) VALUES (
+	        	#{id} ,
+	        	#{companyId} ,
+	        	#{officeId} ,
+	        	#{loginName} ,
+	        	#{password} ,
+	        	#{no} ,
+	        	#{name} ,
+	        	#{email} ,
+	        	#{phone} ,
+	        	#{mobile} ,
+	        	#{userType} ,
+	        	#{loginIp} ,
+	        	#{loginDate} ,
+	        	#{createBy} ,
+	        	#{createDate} ,
+	        	#{updateBy} ,
+	        	#{updateDate} ,
+	        	#{remarks} ,
+	        	#{delFlag} 
+	        )
+	    ]]>
+	</insert>
+    
+	<update id="SysUser_update" >
+    <![CDATA[
+        UPDATE SYS_USER SET
+	        	company_id = #{companyId} ,
+	        	office_id = #{officeId} ,
+	        	login_name = #{loginName} ,
+	        	password = #{password} ,
+	        	no = #{no} ,
+	        	name = #{name} ,
+	        	email = #{email} ,
+	        	phone = #{phone} ,
+	        	mobile = #{mobile} ,
+	        	user_type = #{userType} ,
+	        	login_ip = #{loginIp} ,
+	        	login_date = #{loginDate} ,
+	        	create_by = #{createBy} ,
+	        	create_date = #{createDate} ,
+	        	update_by = #{updateBy} ,
+	        	update_date = #{updateDate} ,
+	        	remarks = #{remarks} ,
+	        	del_flag = #{delFlag} 
+        WHERE 
+	        	id = #{id} 
+    ]]>
+	</update>
+
+    <delete id="SysUser_delete">
+    <![CDATA[
+        DELETE FROM SYS_USER WHERE
+        	id = #{id} 
+    ]]>
+    </delete>
+    
+    <select id="SysUser_getById" resultMap="RM_SysUser">
+		SELECT <include refid="SysUser_columns" />
+	    <![CDATA[
+		    FROM SYS_USER 
+	        WHERE 
+		        	id = #{id} 
+	    ]]>
+	</select>
+	
+	<sql id="SysUser_selectList_where">
+		<where>	      				
+			     	<if test="id!=null">
+						AND id = #{id}
+					</if>
+			     	<if test="companyId!=null">
+						AND company_id = #{companyId}
+					</if>
+			     	<if test="officeId!=null">
+						AND office_id = #{officeId}
+					</if>
+			     	<if test="loginName!=null">
+						AND login_name = #{loginName}
+					</if>
+			     	<if test="password!=null">
+						AND password = #{password}
+					</if>
+			     	<if test="no!=null">
+						AND no = #{no}
+					</if>
+			     	<if test="name!=null">
+						AND name = #{name}
+					</if>
+			     	<if test="email!=null">
+						AND email = #{email}
+					</if>
+			     	<if test="phone!=null">
+						AND phone = #{phone}
+					</if>
+			     	<if test="mobile!=null">
+						AND mobile = #{mobile}
+					</if>
+			     	<if test="userType!=null">
+						AND user_type = #{userType}
+					</if>
+			     	<if test="loginIp!=null">
+						AND login_ip = #{loginIp}
+					</if>
+			     	<if test="createBy!=null">
+						AND create_by = #{createBy}
+					</if>
+			     	<if test="updateBy!=null">
+						AND update_by = #{updateBy}
+					</if>
+			     	<if test="remarks!=null">
+						AND remarks = #{remarks}
+					</if>
+			     	<if test="delFlag!=null">
+						AND del_flag = #{delFlag}
+					</if>
+		</where>
+	</sql>
+		
+    <select id="SysUser_selectList_count" resultType="long">
+        SELECT count(*) FROM SYS_USER 
+		<include refid="SysUser_selectList_where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 offset,pageSize,lastRows 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="SysUser_selectList" resultMap="RM_SysUser">
+    	SELECT <include refid="SysUser_columns" />
+	    FROM SYS_USER 
+		<include refid="SysUser_selectList_where"/>
+    </select>
+
+</mapper>

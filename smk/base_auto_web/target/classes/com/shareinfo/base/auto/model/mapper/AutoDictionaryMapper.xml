@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 使用接口地址作为namespace-->
+<mapper namespace="com.shareinfo.base.auto.dao.AutoDictionaryDao">
+
+	<resultMap id="RM.AutoDictionary" type="com.shareinfo.base.auto.model.AutoDictionaryModel">
+        <result property="id" column="id"/>
+        <result property="dictionaryName" column="dictionary_name"/>
+        <result property="dictionaryValue" column="dictionary_value"/>
+        <result property="classId" column="class_id"/>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="AutoDictionary.columns">
+	    <![CDATA[
+				id,
+				dictionary_name,
+				dictionary_value,
+				class_id
+	    ]]>
+	</sql>
+
+	<insert id="AutoDictionary.insert">
+		<selectKey resultType="java.lang.String" order="BEFORE" keyProperty="id">
+			SELECT uuid() AS ID 
+	    </selectKey>
+	    <![CDATA[
+	        INSERT INTO AUTO_DICTIONARY (
+	        	id ,
+	        	dictionary_name ,
+	        	dictionary_value ,
+	        	class_id 
+	        ) VALUES (
+	        	#{id} ,
+	        	#{dictionaryName} ,
+	        	#{dictionaryValue} ,
+	        	#{classId} 
+	        )
+	    ]]>
+	</insert>
+    
+	<update id="AutoDictionary.update" >
+    <![CDATA[
+        UPDATE AUTO_DICTIONARY SET
+	        	dictionary_name = #{dictionaryName} ,
+	        	dictionary_value = #{dictionaryValue} ,
+	        	class_id = #{classId} 
+        WHERE 
+	        	id = #{id} 
+    ]]>
+	</update>
+
+    <delete id="AutoDictionary.delete">
+    <![CDATA[
+        DELETE FROM AUTO_DICTIONARY WHERE
+        	id = #{id} 
+    ]]>
+    </delete>
+    
+    <select id="AutoDictionary.getById" resultMap="RM.AutoDictionary">
+		SELECT <include refid="AutoDictionary.columns" />
+	    <![CDATA[
+		    FROM AUTO_DICTIONARY 
+	        WHERE 
+		        	id = #{id} 
+	    ]]>
+	</select>
+	
+	<sql id="AutoDictionary.findPage.where">
+		<where>	      				
+			     	<if test="id!=null">
+						AND id = #{id}
+					</if>
+			     	<if test="dictionaryName!=null">
+						AND dictionary_name = #{dictionaryName}
+					</if>
+			     	<if test="dictionaryValue!=null">
+						AND dictionary_value = #{dictionaryValue}
+					</if>
+			     	<if test="classId!=null">
+						AND class_id = #{classId}
+					</if>
+		</where>
+	</sql>
+		
+    <select id="AutoDictionary.findPage.count" resultType="long">
+        SELECT count(*) FROM AUTO_DICTIONARY 
+		<include refid="AutoDictionary.findPage.where"/>    
+    </select>
+    
+    <!--
+    	分页查询已经使用Dialect进行分页,也可以不使用Dialect直接编写分页
+    	因为分页查询将传 offset,pageSize,lastRows 三个参数,不同的数据库可以根于此三个参数属性应用不同的分页实现
+    -->
+    <select id="AutoDictionary.findPage" resultMap="RM.AutoDictionary">
+    	SELECT <include refid="AutoDictionary.columns" />
+	    FROM AUTO_DICTIONARY 
+		<include refid="AutoDictionary.findPage.where"/>
+    </select>
+
+</mapper>

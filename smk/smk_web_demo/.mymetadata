@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="smk_web_demo"
+  id="myeclipse.1400664557778"
+  context-root="/smk_web_demo"
+  j2ee-spec="6.0"
+  archive="smk_web_demo.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

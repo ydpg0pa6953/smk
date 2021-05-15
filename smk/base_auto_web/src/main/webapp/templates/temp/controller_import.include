@@ -1,0 +1,3 @@
+import ${packageName}.model.${className}Model;
+import ${packageName}.query.${className}Query;
+import ${packageName}.service.${className}Service;

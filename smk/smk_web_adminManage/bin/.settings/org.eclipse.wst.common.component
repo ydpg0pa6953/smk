@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="smk_web_adminManage">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/"/>
+        <dependent-module archiveName="smk_sys_service-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/smk_sys_service/smk_sys_service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="base_framework-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/base_framework/base_framework">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="base_common-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/base_common/base_common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="smk_auto_service-1.1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/smk_auto_service/smk_auto_service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="/smk_web_adminManage"/>
+        <property name="java-output-path" value="/smk_web_adminManage/src/main/webapp/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

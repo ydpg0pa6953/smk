@@ -1,0 +1,25 @@
+packageName 			包名
+className 				类名
+						类名小写 <#assign classNameLower = className?uncap_first>
+tableName				表名
+comments				表描述
+table					表信息，包含主键、字段
+	keyColumn			主键列表，仅字符串列表
+	columns				字段列表
+	keyColumns			主键字段列表
+	notKeyColumns		非主键字段列表
+	keyJavaType			主键的类型：单个主键或多个
+	
+column
+	sqlColumnName 		数据库_字段名称
+	isPK				是否主键
+	sqlDataType 		数据库_字段类型
+	sqlColumnSize 		数据库_字段长度
+	sqlDecimalDigits 	如果是oracle的number的时候wei为小数点部分
+	SqlIsAutoIncrement	数据库_是否自增
+	sqlNullAble			数据库_是否允许为空
+	sqlRemarks			数据库_字段描述
+	sqlColumnDef		数据库_默认值
+	classColumnName		类_对应字段名称
+	classDataType		类_类型
+	isDateTimeColumn	是否是时间类型

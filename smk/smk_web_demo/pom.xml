@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>smk</artifactId>
+		<groupId>com.shareinfo</groupId>
+		<version>1.1.0</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>smk_web_demo</artifactId>
+	<packaging>war</packaging>
+	<build />
+
+	<properties>
+		<mysql.version>5.1.22</mysql.version>
+		<spring.version>4.0.4.RELEASE</spring.version>
+	</properties>
+
+	<dependencies>
+		<!-- mysql驱动 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+		<!-- spring mvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.shareinfo</groupId>
+			<artifactId>smk_sys_service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<version>1.1.0</version>
+</project>

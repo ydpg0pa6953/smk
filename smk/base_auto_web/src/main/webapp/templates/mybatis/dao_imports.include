@@ -1,0 +1,10 @@
+import ${packageName}.model.${className}Model;
+<#if table.keyJavaType="java.util.HashMap">
+import java.util.HashMap;
+</#if>
+
+/**
+ * @author 黄鹏 email:94300452@qq.com
+ * @version 1.0
+ * @since 1.0
+ */

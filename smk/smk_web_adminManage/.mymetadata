@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="smk_web_adminManage"
+  id="myeclipse.1400664880114"
+  context-root="/smk_web_adminManage"
+  j2ee-spec="6.0"
+  archive="smk_web_adminManage.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

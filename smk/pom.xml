@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.shareinfo</groupId>
+  <artifactId>smk</artifactId>
+  <version>1.1.0</version>
+  <packaging>pom</packaging>
+  <build/>
+  <modules>
+  	<module>base_common</module>
+  	<module>base_framework</module>
+  	<module>smk_sys_service</module>
+  	<module>smk_sms_service</module>
+  	<module>smk_mms_service</module>
+  	<module>smk_stat_service</module>
+  	<module>smk_web_demo</module>
+  	<module>smk_web_adminManage</module>
+  	<module>base_auto</module>
+  	<module>base_auto_web</module>
+  	<module>smk_auto_service</module>
+  </modules>
+</project>

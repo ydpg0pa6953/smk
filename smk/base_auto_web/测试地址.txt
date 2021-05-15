@@ -1,0 +1,1 @@
+http://127.0.0.1:10072/base_auto_web/autoManage/main.jsp
