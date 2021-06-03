@@ -8,6 +8,7 @@
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>smk_sys_service</artifactId>
+	<version>1.1.0</version>
 
 	<properties>
 	</properties>
@@ -15,8 +16,9 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.shareinfo</groupId>
-			<artifactId>base_framework</artifactId>
+			<artifactId>smk_base_framework</artifactId>
 			<version>1.1.0</version>
 		</dependency>
 	</dependencies>
+	
 </project>

@@ -6,16 +6,14 @@
   <packaging>pom</packaging>
   <build/>
   <modules>
-  	<module>base_common</module>
-  	<module>base_framework</module>
+  	<module>smk_base_common</module>
+  	<module>smk_base_framework</module>
   	<module>smk_sys_service</module>
   	<module>smk_sms_service</module>
   	<module>smk_mms_service</module>
   	<module>smk_stat_service</module>
   	<module>smk_web_demo</module>
   	<module>smk_web_adminManage</module>
-  	<module>base_auto</module>
-  	<module>base_auto_web</module>
   	<module>smk_auto_service</module>
   </modules>
 </project>

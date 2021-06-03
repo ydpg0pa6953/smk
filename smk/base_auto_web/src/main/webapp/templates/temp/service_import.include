@@ -1,4 +1,0 @@
-import ${packageName}.model.${className}Model;
-<#if table.keyJavaType="java.util.HashMap">
-import java.util.HashMap;
-</#if>

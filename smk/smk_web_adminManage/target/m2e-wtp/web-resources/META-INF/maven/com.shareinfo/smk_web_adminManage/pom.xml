@@ -8,6 +8,7 @@
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>smk_web_adminManage</artifactId>
+	<version>1.1.0</version>
 	<packaging>war</packaging>
 	<build />
 
@@ -20,10 +21,6 @@
 			<artifactId>smk_sys_service</artifactId>
 			<version>1.1.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.shareinfo</groupId>
-			<artifactId>smk_auto_service</artifactId>
-			<version>1.1.0</version>
-		</dependency>
 	</dependencies>
+	
 </project>
